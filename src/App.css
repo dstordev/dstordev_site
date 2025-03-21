@@ -1,0 +1,256 @@
+#root {
+    /*Colors*/
+    --textColor: #FFFFFF;
+    --userColor: #A88BFA;
+    --youtubeColor: #FF0033;
+    --githubColor: #F0F6FC;
+    --telegramColor: #24A5DE;
+
+    --secondTextColor: rgba(255, 255, 255, 0.5);
+    --userColorT: rgba(168, 139, 250, 0.3);
+    --userColorSelectedT: rgba(168, 139, 250, 0.5);
+    --youtubeColorT: rgba(255, 0, 51, 0.3);
+    --youtubeColorSelectedT: rgba(255, 0, 51, 0.5);
+    --githubColorT: rgba(240, 246, 252, 0.3);
+    --githubColorSelectedT: rgba(240, 246, 252, 0.5);
+    --telegramColorT: rgba(36, 165, 222, 0.3);
+    --telegramColorSelectedT: rgba(36, 165, 222, 0.5);
+    --appWindowColorT: rgba(0, 0, 0, 0.5);
+
+    --userFontSize: 24px;
+
+    /*max-width: 1280px;
+    /*margin: 0 auto;*/
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+    text-align: center;
+    font-family: "Sansation Bold", sans-serif;
+}
+
+/* Font face */
+
+@font-face {
+    font-family: 'Sansation Bold';
+    src: url('./assets/fonts/Sansation_Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Sansation Regular';
+    src: url('./assets/fonts/Sansation_Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+.appWindow {
+    max-width: 495px;
+    width: 100%;
+    height: 492px;
+    border-radius: 20px;
+    background-color: var(--appWindowColorT);
+    backdrop-filter: blur(22px);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.7s;
+}
+
+.linkContainer {
+    background-color: var(--userColorT);
+    width: 100%;
+    min-height: 50px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.7s;
+    font-size: 20px;
+    backdrop-filter: blur(22px);
+}
+
+@media (hover: hover) {
+    .linkContainer:hover {
+        background-color: var(--userColorSelectedT);
+        border-radius: 25px;
+        transition: 0.7s;
+    }
+}
+
+
+.userLabelContainer {
+    min-height: 75px;
+    font-size: var(--userFontSize);
+    background-color: var(--userColorT);
+    cursor: default;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: 0.7s;
+    backdrop-filter: blur(22px);
+}
+
+@media (hover: hover) {
+    .userLabelContainer:hover {
+        background-color: var(--userColorT);
+    }
+}
+
+.userLogoContainer {
+    width: 118px;
+    height: 80px;
+    background-color: var(--userColorT);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    backdrop-filter: blur(22px);
+    transition: 0.7s;
+}
+
+.userLogoContainer:hover {
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.userLogoImg {
+    width: 82px;
+    height: 58px;
+    background-color: var(--textColor);
+    mask: url("./assets/user_logo.svg") no-repeat center;
+}
+
+.appWindowHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 146px;
+}
+
+/* link containers */
+
+#youtubeLinkContainer {
+    background-color: var(--youtubeColorT);
+}
+
+@media (hover: hover) {
+    #youtubeLinkContainer:hover {
+        background-color: var(--youtubeColorSelectedT);
+    }
+}
+
+#githubLinkContainer {
+    background-color: var(--githubColorT);
+}
+
+@media (hover: hover) {
+    #githubLinkContainer:hover {
+        background-color: var(--githubColorSelectedT);
+    }
+}
+
+#telegramLinkContainer {
+    background-color: var(--telegramColorT);
+}
+
+@media (hover: hover) {
+    #telegramLinkContainer:hover {
+        background-color: var(--telegramColorSelectedT);
+    }
+}
+
+.appWindowColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    gap: 38px;
+}
+
+.linksColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    overflow: auto;
+}
+
+.appWindowLabel {
+    width: 100%;
+    text-align: right;
+    color: var(--secondTextColor);
+    font-size: 16px;
+}
+
+.formatedLinkContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* section circle */
+
+.circleLinkColumn {
+    background-color: var(--secondTextColor);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.hideCircleLinkColumn {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Colors */
+.youtubeColor {
+    color: var(--youtubeColor);
+}
+
+.githubColor {
+    color: var(--githubColor);
+}
+
+.telegramColor {
+    color: var(--telegramColor);
+}
+
+.youtubeColorBg {
+    background-color: var(--youtubeColor);
+}
+
+.githubColorBg {
+    background-color: var(--githubColor);
+}
+
+.telegramColorBg {
+    background-color: var(--telegramColor);
+}
+
